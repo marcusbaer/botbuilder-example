@@ -1,0 +1,15 @@
+{
+    "name": "POC Bot",
+    "description": "",
+    "secretKey": "",
+    "services": [
+        {
+            "appId": "",
+            "id": "6ed1f050-7ae2-11e8-a37a-cb1ea04bdeed",
+            "type": "endpoint",
+            "appPassword": "",
+            "endpoint": "http://localhost:3978/api/messages",
+            "name": "http://localhost:3978/api/messages"
+        }
+    ]
+}
