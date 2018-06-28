@@ -3,6 +3,18 @@ const restify = require('restify')
 
 require('dotenv').config()
 
+const cardActions = (session, text = 'Choose an option!', options = []) => {
+
+  let cardActionsList = options.map(option => {
+    return builder.CardAction.imBack(session, option.dialog, option.label)
+  })
+
+  let msg = new builder.Message(session)
+    .text("Make a decision!")
+    .suggestedActions(builder.SuggestedActions.create(session, cardActionsList))
+  return msg
+}
+
 // Setup Restify Server
 let server = restify.createServer()
 server.listen(process.env.port || process.env.PORT || 3978, () => {
@@ -38,6 +50,15 @@ bot.dialog('/', [
       session.send("Root dialog. You said: %s", session.message.text)
     } else {
       session.send("Root dialog.")
+      let msg = cardActions(
+        session,
+        'Make a decision!',
+        [
+          { dialog: 'level0-a', label: 'Option A'},
+          { dialog: 'level0-b', label: 'Option B'},
+        ]
+      )
+      session.send(msg)
     }
   },
   (session) => {
