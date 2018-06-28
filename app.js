@@ -19,14 +19,7 @@ let connector = new builder.ChatConnector({
 
 server.post('/api/messages', connector.listen())
 
-let bot = new builder.UniversalBot(connector, (session) => {
-  console.log(session.dialogStack(), session.message.text)
-  if (session.message.text) {
-    session.send("Root dialog. You said: %s", session.message.text)
-  } else {
-    session.send("Root dialog.")
-  }
-})
+let bot = new builder.UniversalBot(connector)
 
 bot.on('conversationUpdate', function (message) {
     if (message.membersAdded && message.membersAdded.length > 0) {
@@ -38,25 +31,36 @@ bot.on('conversationUpdate', function (message) {
     }
 })
 
-// bot.dialog('/', [
-//   (session) => {
-//     session.send('root dialog')
-//   }
-// ])
-
-// bot.dialog('root', [
-//   (session) => {
-//     session.send('root dialog')
-//   }
-// ])
+bot.dialog('/', [
+  (session) => {
+    // console.log('/',session.dialogStack(), session.message.text)
+    if (session.message.text) {
+      session.send("Root dialog. You said: %s", session.message.text)
+    } else {
+      session.send("Root dialog.")
+    }
+  },
+  (session) => {
+    session.replaceDialog('/')
+  }
+])
 
 bot.dialog('level0-a', [
   (session) => {
-    console.log(session.dialogStack(), session.message.text)
+    console.log('level0-a', session.dialogStack(), session.message.text)
     session.send('level0 A dialog')
   }
 ]).triggerAction({
    matches: /^level0-a$/i
+})
+
+bot.dialog('level0-b', [
+  (session) => {
+    console.log('level0-b', session.dialogStack(), session.message.text)
+    session.send('level0 B dialog')
+  }
+]).triggerAction({
+   matches: /^level0-b$/i
 })
 
 // https://docs.microsoft.com/en-us/azure/bot-service/nodejs/bot-builder-nodejs-quickstart?view=azure-bot-service-3.0
