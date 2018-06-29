@@ -1,0 +1,6 @@
+{
+    "name": "Bot example",
+    "description": "A bot with BotML dialogs",
+    "secretKey": "",
+    "services": []
+}
