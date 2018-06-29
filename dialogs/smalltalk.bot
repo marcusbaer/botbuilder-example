@@ -1,0 +1,58 @@
+! BOTML 1
+
+~ welcome
+> [hello]
+< [hello], ich bin BotML.
+~ [name]
+
+~ name
+< Wie heißt du?
+< Was ist dein Name?
+> ${name}
+< Du bist also $name. Schön!
+~ [age]
+
+~ age
+< Und wie alt bist du?
+> #{age}
+< Du bist also $name und $age Jahre alt.
+@ trigger('quit')
+
+~ reject
+> *
+< Das verstehe ich nicht.
+
+~ start
+< Hallo!
+
+# dictionnaries
+
+= confirm
+- ja
+- nein
+
+= hello
+- Hallo
+- Hi
+- Hey
+
+= ok
+- ok
+- ja
+- fein
+- gut
+- perfekt
+
+= no
+- nein
+- lieber nicht
+
+= success
+- habe ich gemacht
+- erledigt
+
+# start the workflow
+
+~ [welcome]
+~ [reject]
+~ [start]
