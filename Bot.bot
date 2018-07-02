@@ -2,5 +2,14 @@
     "name": "Bot example",
     "description": "A bot with BotML dialogs",
     "secretKey": "",
-    "services": []
+    "services": [
+      {
+          "appId": "",
+          "id": "",
+          "type": "endpoint",
+          "appPassword": "",
+          "endpoint": "http://localhost:3978/api/messages",
+          "name": "http://localhost:3978/api/messages"
+      }
+    ]
 }
