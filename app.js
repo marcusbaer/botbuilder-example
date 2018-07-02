@@ -33,14 +33,3 @@ bot.dialog('/', [
 ])
 
 addBotMlDialog('Smalltalk', ['smalltalk.bot', 'dictionaries.bot'], /^hi$/i)
-
-// TODO: add Dockerfile
-// TODO: add local web chat and skype example
-// TODO: deploy with Now.sh
-// TODO: if user leaves the bot, destroy his botmlUserDialogs
-
-/* FURTHER READING */
-
-// https://codename.co/botml/
-// https://docs.microsoft.com/en-us/azure/bot-service/nodejs/bot-builder-nodejs-quickstart?view=azure-bot-service-3.0
-// https://github.com/dmdnkv/skype-sdk
