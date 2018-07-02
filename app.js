@@ -2,71 +2,42 @@ const BotLib = require('./lib/bot')
 
 const bot = BotLib.bot
 const addBotMlDialog = BotLib.addBotMlDialog
+const createBotMlRootDialog = BotLib.createBotMlRootDialog
+const cardActions = BotLib.cardActions
 
-/*
-bot.dialog('BotML', [
-  botmlDialog([
-    'dialogs/smalltalk.bot'
-  ])
-]).triggerAction({
-   matches: /^hi$/i
-})
-*/
+//createBotMlRootDialog('/', ['welcome.bot', 'dictionaries.bot'])
 
-addBotMlDialog('Smalltalk', ['smalltalk.bot'], /^hi$/i)
-
-bot.dialog('level0-a', [
+bot.dialog('/', [
   (session) => {
-    console.log('level0-a', session.dialogStack(), session.message.text)
-    session.send('level0 A dialog. dialog ended.')
-    session.endDialog()
-  }
-]).triggerAction({
-   matches: /^level0-a$/i
-})
-
-bot.dialog('level0-b', [
+    // console.log('/',session.dialogStack(), session.message.text)
+    if (session.message.text) {
+      session.send("Root dialog. You said: %s", session.message.text)
+    } else {
+      session.send("Root dialog.")
+      let msg = cardActions(
+        session,
+        'Make a decision!',
+        [
+          { dialog: 'level0-a', label: 'Option A: with end'},
+          { dialog: 'level0-b', label: 'Option B: no end'},
+          { dialog: 'level0-c', label: 'Option C: waterfall'},
+          { dialog: 'info', label: 'user info'},
+        ]
+      )
+      session.send(msg)
+    }
+  },
   (session) => {
-    console.log('level0-b:1', session.dialogStack(), session.message.text)
-    session.send('level0 B:1 dialog. dialog without end.')
+    session.replaceDialog('/')
   }
-]).triggerAction({
-   matches: /^level0-b$/i
-})
+])
+
+addBotMlDialog('Smalltalk', ['smalltalk.bot', 'dictionaries.bot'], /^hi$/i)
 
 // TODO: add Dockerfile
 // TODO: add local web chat and skype example
 // TODO: deploy with Now.sh
 // TODO: if user leaves the bot, destroy his botmlUserDialogs
-
-bot.dialog('level0-c', [
-  (session) => {
-    session.send('level0 C:1 dialog. dialog with waterfall.')
-    // TODO: implement waterfall with prompts here
-  }
-]).triggerAction({
-   matches: /^level0-c$/i
-})
-/*
-bot.dialog('info', [
-  (session) => {
-    session.send('info dialog. Channel: %s, language: %s', session.channelId, session.locale)
-    console.log('level0-b:1', session.dialogStack(), session.message.text)
-  }
-]).triggerAction({
-   matches: /^info/i
-})
-
-bot.dialog('reset', [
-  (session) => {
-    session.send('reset dialog.')
-    session.endDialog()
-    session.replaceDialog('/')
-  }
-]).triggerAction({
-   matches: /^reset$/i
-})
-*/
 
 /* FURTHER READING */
 

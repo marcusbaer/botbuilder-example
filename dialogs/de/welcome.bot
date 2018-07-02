@@ -1,0 +1,9 @@
+! BOTML 1
+
+~ welcome
+< [hello], ich bin BotML.
+> *
+
+# start the workflow
+
+~ [welcome]

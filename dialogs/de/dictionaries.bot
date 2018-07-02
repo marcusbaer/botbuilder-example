@@ -1,0 +1,27 @@
+! BOTML 1
+
+# dictionnaries
+
+= confirm
+- ja
+- nein
+
+= hello
+- Hallo
+- Hi
+- Hey
+
+= ok
+- ok
+- ja
+- fein
+- gut
+- perfekt
+
+= no
+- nein
+- lieber nicht
+
+= success
+- habe ich gemacht
+- erledigt
