@@ -1,0 +1,65 @@
+! BOTML 1
+
+~ sayname
+> /(name|heißt)/
+< Ich bin ein Bot ohne Name.
+~ [name]
+
+~ name
+< Wie heißt du?
+< Was ist dein Name?
+> ${name}
+< Du bist also $name, schön!
+@ trigger('quit')
+
+~ welcome
+> hi
+< [hello], soll ich dir was erzählen?
+@ trigger('quit-handson')
+
+~ showHandsOnCognitiveServices
+> Hands-On zu Cognitive Services
+< Also gut, etwas über Cognitive Services.
+> *
+< Azure kennt eine ganze Menge Cognitive Services: ...
+> *
+@ trigger('quit-handson')
+
+~ showHandsOverview
+> Hands-On im Überblick
+< Ein Überblick..
+> *
+@ trigger('quit-handson')
+
+#~ reject
+#> *
+#< Das verstehe ich nicht.
+#@ trigger('quit')
+
+# dictionnaries
+
+= hello
+- Hallo
+- Hi
+- Hey
+
+= ok
+- ok
+- ja
+- fein
+- gut
+- perfekt
+
+= no
+- nein
+- lieber nicht
+
+= success
+- habe ich gemacht
+- erledigt
+
+# start the workflow
+
+~ [sayname]
+~ [welcome]
+~ [showHandsOnCognitiveServices]

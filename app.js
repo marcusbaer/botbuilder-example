@@ -11,20 +11,9 @@ bot.dialog('/', [
   (session) => {
     // console.log('/',session.dialogStack(), session.message.text)
     if (session.message.text) {
-      session.send("Root dialog. You said: %s", session.message.text)
+      session.send("Ich verstehe nicht den Zusammenhang. '%s' sagt mir nix.", session.message.text)
     } else {
-      session.send("Root dialog.")
-      let msg = cardActions(
-        session,
-        'Make a decision!',
-        [
-          { dialog: 'level0-a', label: 'Option A: with end'},
-          { dialog: 'level0-b', label: 'Option B: no end'},
-          { dialog: 'level0-c', label: 'Option C: waterfall'},
-          { dialog: 'info', label: 'user info'},
-        ]
-      )
-      session.send(msg)
+      session.send("Hallo!")
     }
   },
   (session) => {
@@ -32,4 +21,25 @@ bot.dialog('/', [
   }
 ])
 
-addBotMlDialog('Smalltalk', ['smalltalk.bot', 'dictionaries.bot'], /^hi$/i)
+bot.dialog('suggestHandsOnTopic', [
+  (session) => {
+    // console.log('/',session.dialogStack(), session.message.text)
+    session.send("Ich kann dir was über das Hand-On zu Chatbots erzählen.")
+    let msg = cardActions(
+      session,
+      'Worüber möchtest du mehr wissen?',
+      [
+        { dialog: 'Hands-On im Überblick', label: 'Überblick'},
+        { dialog: 'Hands-On zu Cognitive Services', label: 'Cognitive Services'},
+      ]
+    )
+    session.send(msg)
+  }
+]).triggerAction({
+   matches: /vorschlag/i
+})
+
+// currently only the same dialog definition for each item works...
+addBotMlDialog('askForName', ['hands-on.bot'], /(name|heißt)/i)
+addBotMlDialog('showHandsOnRoot', ['hands-on.bot'], /^hi$/i)
+addBotMlDialog('showHandsOnCognitiveServices', ['hands-on.bot'], /^Hands-On /i)
