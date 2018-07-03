@@ -29,7 +29,8 @@ bot.dialog('suggestHandsOnTopic', [
       session,
       'Worüber möchtest du mehr wissen?',
       [
-        { dialog: 'Hands-On im Überblick', label: 'Überblick'},
+        { dialog: 'Hands-On zum Aufbau', label: 'Aufbau'},
+        { dialog: 'Hands-On mit Best Practices', label: 'In der Praxis'},
         { dialog: 'Hands-On zu Cognitive Services', label: 'Cognitive Services'},
         { dialog: 'Hands-On zu LUIS', label: 'LUIS'},
         { dialog: 'Hands-On zu QnA Maker', label: 'QnA Maker'},

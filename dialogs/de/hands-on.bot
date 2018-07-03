@@ -1,14 +1,14 @@
 ! BOTML 1
 
-~ toc
-> Cognitive Services
-> QnA maker (MV)
-> LUIS (MV)
-> best practices
-> state, stack
-> more than words (MV)
-> summary
-> Bot architecture
+#~ toc
+#> Cognitive Services (MV)
+#> QnA maker (MV)
+#> LUIS (MV)
+#> best practices
+#> state, stack
+#> more than words (MV)
+#> summary
+#> Bot architecture
 
 ~ sayname
 > /(name|heißt)/
@@ -27,8 +27,78 @@
 < [hello], soll ich dir was erzählen?
 @ trigger('quit-handson')
 
+~ showHandsOnArchitecture
+> Hands-On zum Aufbau
+< Wie so ein Chatbot funktioniert? Zunächst mal gibt es dich, den User.
+> *
+< Der User verbindet sich über Channels mit dem Bot.
+> *
+< Channels können sein: Webchats, Skype oder Teams, Slack, SMS oder auch Emails. Natürlich gibt es noch mehr davon.
+> *
+< Ja, auch für Facebook ist was dabei.
+> *
+< Die Channels kommunizieren mit dem Bot über eine REST API.
+> *
+< In den meisten Fällen sollte der State gespeichert werden können. Dazu wird der Bot mit einem Speicher verbunden. Also eine Datenbank.
+> *
+< Und dann nutzt so ein Bot oft auch Services. Kognitive Services, Functions, andere Apps. Was auch immer.
+> *
+< Der Bot selbst unterscheidet einzelne Dialoge, die je nach Situation ausgeführt werden. Jeder Dialog hat seinen eigenen Auslöser.
+> *
+< Microsoft bietet APIs für C# und Node.js an. Auch für Testing und Storage-Analyse werden Tools bereitgestellt. "Bot Framework Emulator" sagt dir was?
+> *
+@ trigger('quit-handson')
+
+~ showHandsOnSummary
+> Hands-On - ein Fazit
+< Willst du meine persönliche Meinung zum Thema Chatbots wissen?
+> nein
+< Jetzt bin ich aber beleidigt
+> *
+< Hm. Also ich denke, auch Microsoft befindet sich erst am Anfang der Chatbot-Entwicklung. An vielen Stellen holpert es noch. Aber der Ansatz stimmt.
+> *
+< Microsofts Anbindung an eigene Services bietet große Vorteile. Vieles lässt sich leicht damit schneller lösen. Zudem bestimmst du, anders als bei Dialogflow, selbst, in welcher Region dein Bot laufen soll.
+> *
+< Ein Chatbot kann gut mit Bedacht eingesetzt werden. Wie wäre es zum Beispiel mit intelligenteren FAQs auf deiner Website?
+> *
+< Auch eine verbesserte Suche kann ich mir damit vorstellen.
+> *
+< In jedem Fall bekommt der Kunde so einen niederschwelligen Einstieg in das Thema vorgeführt. Ob daraus später mehr wird...?
+> *
+< Zudem ist der Einstieg auch relativ kostengünstig. In Azure kann ein Bot als Web App oder als Function angelegt werden. Du weißt, dass Functions keinen eigenen Server brauchen?
+> *
+< Wirklich gute Anwendungsfälle sind bisher noch Mangelware. Aber das wird sich in den nächsten Monaten bestimmt ändern.
+> *
+@ trigger('quit-handson')
+
+~ showHandsOnBestPractices
+> Hands-On mit Best Practices
+< Ach ja, das ist so eine Sache. Das häufigste Problem bei Bots ist die Mehrwertfindung.
+> *
+< Die Dialoge eines Bots lassen sich gut mit den Screens einer Website vergleichen.
+> *
+< Analog zum Main-Screen, gibt es auch einen Root-Dialog, über den der Nutzer einsteigt.
+> *
+< Diese Begrüßung sollte gleich verschiedene Optionen vorstellen. Das hilft dem Nutzer bei der Orientierung und leitet ihn besser in konkrete Folgedialoge.
+> *
+< Die Dialoge sollte sich der Bot in einem Stack merken. Damit weißt du immer, wo der Nutzer ist und kannst zum Beispiel eine kontext-sensitive Hilfe anbieten, einen Hilfe-Dialog, der aus jedem anderen Dialog heraus aufrufbar ist.
+> *
+< Wenn du etwas längere Operationen hast, informiere deinen User, damit er nicht frustriert ist. Manche Abfragen im Hintergrund dauern eben auch mal ein wenig.
+> *
+< Es gibt übrigens unterschiedliche custom states. Willst du wissen, welche?
+> *
+< User data bleibt an der Session. Ein Beispiel dafür ist die Sprache des Users.
+> *
+< Conversational data sind Daten für alle im Gespräch befindlichen User.
+> *
+< Was denkst du, was dann also als "private conversational data" bezeichnet wird?
+> *
+< Ach ja. Gut wäre es, wenn du einen Bot auch so baust, dass du aus jedem Dialog wieder in den Root-Dialog zurück wechseln kannst.
+> *
+@ trigger('quit-handson')
+
+
 ~ showHandsOnCognitiveServices
-> Hands-On zu Cognitive Services
 < Also gut, etwas über Cognitive Services.
 > *
 < Es gibt eine Reihe von Services, die Microsoft anbietet und auch für Chatbots interessant sind. Hier findest du eine Übersicht https://azure.microsoft.com/en-us/services/cognitive-services/directory/
