@@ -1,5 +1,15 @@
 ! BOTML 1
 
+~ toc
+> Cognitive Services
+> QnA maker (MV)
+> LUIS (MV)
+> best practices
+> state, stack
+> more than words (MV)
+> summary
+> Bot architecture
+
 ~ sayname
 > /(name|heißt)/
 < Ich bin ein Bot ohne Name.
@@ -24,6 +34,43 @@
 < Azure kennt eine ganze Menge Cognitive Services: ...
 > *
 @ trigger('quit-handson')
+
+~ showHandsOnLuis
+> Hands-On zu LUIS
+< LUIS.. Das ist doch der Language Understanding Intelligent Service.
+> *
+< Damit kannst du Trigger für einen Bot erstellen.
+> *
+< Zeig doch mal was!
+> *
+@ trigger('quit-handson')
+
+~ showHandsOnQnAMaker
+> Hands-On zu QnA Maker
+< Der QnA Maker hilft bei der Erstellung von FAQ.
+> *
+< Ohne Code lässt sich damit ein Dialog implementieren.
+> *
+< Die Daten werden aus Quellen, wie Excel oder FAQs auf Websites eingelesen.
+> *
+< Der QnA Maker kann später auch mit weiteren Inhalten befüttert werden.
+> *
+@ trigger('quit-handson')
+
+~ showHandsOnMoreThanWords
+> Hands-On zu Cards
+< Dialoge sind mehr als Worte.
+> *
+< Smileys, Audio, Video
+> *
+< Im Zusammenhang mit Chatbots, sind vor allem Cards interessant.
+> *
+< Weißt du, was das ist? Hero Cards, Sign-In Cards und Adaptive Cards?
+> *
+< Adaptive Cards findest du im Überblick auf einer eigenen Seite adaptivecards.io
+> *
+@ trigger('quit-handson')
+
 
 ~ showHandsOverview
 > Hands-On im Überblick

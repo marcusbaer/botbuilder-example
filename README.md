@@ -9,7 +9,7 @@ Demonstration of a basic bot setup with BotBuider in combination with BotML to h
 
 # Testing
 
-Inspect bot with Bot Explorer.
+Inspect bot with Bot Emulator.
 
 # How to do bots
 
