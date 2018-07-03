@@ -31,7 +31,7 @@
 > Hands-On zu Cognitive Services
 < Also gut, etwas über Cognitive Services.
 > *
-< Azure kennt eine ganze Menge Cognitive Services: ...
+< Es gibt eine Reihe von Services, die Microsoft anbietet und auch für Chatbots interessant sind. Hier findest du eine Übersicht https://azure.microsoft.com/en-us/services/cognitive-services/directory/
 > *
 @ trigger('quit-handson')
 
@@ -55,6 +55,8 @@
 > *
 < Der QnA Maker kann später auch mit weiteren Inhalten befüttert werden.
 > *
+< Kennst du eigentlich auch FormFlow?
+> *
 @ trigger('quit-handson')
 
 ~ showHandsOnMoreThanWords
@@ -70,7 +72,6 @@
 < Adaptive Cards findest du im Überblick auf einer eigenen Seite adaptivecards.io
 > *
 @ trigger('quit-handson')
-
 
 ~ showHandsOverview
 > Hands-On im Überblick
