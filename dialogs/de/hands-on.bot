@@ -43,6 +43,8 @@
 > *
 < Und dann nutzt so ein Bot oft auch Services. Kognitive Services, Functions, andere Apps. Was auch immer.
 > *
+< Eigene Services können auch aus dem Bereich Machine Learning kommen. Das musst du dann aber selbst entwickeln.
+> *
 < Der Bot selbst unterscheidet einzelne Dialoge, die je nach Situation ausgeführt werden. Jeder Dialog hat seinen eigenen Auslöser.
 > *
 < Microsoft bietet APIs für C# und Node.js an. Auch für Testing und Storage-Analyse werden Tools bereitgestellt. "Bot Framework Emulator" sagt dir was?
@@ -52,12 +54,10 @@
 ~ showHandsOnSummary
 > Hands-On - ein Fazit
 < Willst du meine persönliche Meinung zum Thema Chatbots wissen?
-> nein
-< Jetzt bin ich aber beleidigt
 > *
 < Hm. Also ich denke, auch Microsoft befindet sich erst am Anfang der Chatbot-Entwicklung. An vielen Stellen holpert es noch. Aber der Ansatz stimmt.
 > *
-< Microsofts Anbindung an eigene Services bietet große Vorteile. Vieles lässt sich leicht damit schneller lösen. Zudem bestimmst du, anders als bei Dialogflow, selbst, in welcher Region dein Bot laufen soll.
+< Microsofts Anbindung an eigene Services bietet große Vorteile. Vieles lässt sich damit schneller lösen. Zudem bestimmst du, anders als bei Dialogflow, selbst, in welcher Region dein Bot laufen soll.
 > *
 < Ein Chatbot kann gut mit Bedacht eingesetzt werden. Wie wäre es zum Beispiel mit intelligenteren FAQs auf deiner Website?
 > *
@@ -72,7 +72,7 @@
 @ trigger('quit-handson')
 
 ~ showHandsOnBestPractices
-> Hands-On mit Best Practices
+> Hands-On mit Tipps
 < Ach ja, das ist so eine Sache. Das häufigste Problem bei Bots ist die Mehrwertfindung.
 > *
 < Die Dialoge eines Bots lassen sich gut mit den Screens einer Website vergleichen.
@@ -94,14 +94,6 @@
 < Was denkst du, was dann also als "private conversational data" bezeichnet wird?
 > *
 < Ach ja. Gut wäre es, wenn du einen Bot auch so baust, dass du aus jedem Dialog wieder in den Root-Dialog zurück wechseln kannst.
-> *
-@ trigger('quit-handson')
-
-
-~ showHandsOnCognitiveServices
-< Also gut, etwas über Cognitive Services.
-> *
-< Es gibt eine Reihe von Services, die Microsoft anbietet und auch für Chatbots interessant sind. Hier findest du eine Übersicht https://azure.microsoft.com/en-us/services/cognitive-services/directory/
 > *
 @ trigger('quit-handson')
 
@@ -143,9 +135,11 @@
 > *
 @ trigger('quit-handson')
 
-~ showHandsOverview
-> Hands-On im Überblick
-< Ein Überblick..
+~ showHandsOnCognitiveServices
+> Hands-On zu Cognitive Services
+< Also gut, etwas über Cognitive Services.
+> *
+< Es gibt eine Reihe von Services, die Microsoft anbietet und auch für Chatbots interessant sind. Hier findest du eine Übersicht https://azure.microsoft.com/en-us/services/cognitive-services/directory/
 > *
 @ trigger('quit-handson')
 

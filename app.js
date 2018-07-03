@@ -29,12 +29,13 @@ bot.dialog('suggestHandsOnTopic', [
       session,
       'Worüber möchtest du mehr wissen?',
       [
-        { dialog: 'Hands-On zum Aufbau', label: 'Aufbau'},
-        { dialog: 'Hands-On mit Best Practices', label: 'In der Praxis'},
-        { dialog: 'Hands-On zu Cognitive Services', label: 'Cognitive Services'},
-        { dialog: 'Hands-On zu LUIS', label: 'LUIS'},
-        { dialog: 'Hands-On zu QnA Maker', label: 'QnA Maker'},
-        { dialog: 'Hands-On zu Cards', label: 'Cards'},
+        { dialog: 'Hands-On zum Aufbau', label: 'Aufbau'}, // mba
+        { dialog: 'Hands-On zu Cognitive Services', label: 'Cognitive Services'}, // mvg
+        { dialog: 'Hands-On zu LUIS', label: 'LUIS'}, // mvg
+        { dialog: 'Hands-On zu QnA Maker', label: 'QnA Maker'}, // mvg
+        { dialog: 'Hands-On mit Tipps', label: 'Tipps'}, // mba
+        { dialog: 'Hands-On zu Cards', label: 'Cards'}, // mvg
+        { dialog: 'Hands-On - ein Fazit', label: 'Fazit'}, // mba
       ]
     )
     session.send(msg)
