@@ -12,23 +12,23 @@
 
 ~ sayname
 > /(name|heißt)/
-< Ich bin ein Bot ohne Name.
+< Ein guter Bot braucht keinen Namen.
 ~ [name]
 
 ~ name
 < Wie heißt du?
 < Was ist dein Name?
 > ${name}
-< Du bist also $name, schön!
+< $name, hast du nicht noch etwas vergessen..?
 @ trigger('quit')
 
 ~ welcome
-> hi
-< [hello], soll ich dir was erzählen?
+> [hello]
+< [hello], ich kann dir etwas über Chatbots erzählen.
 @ trigger('quit-handson')
 
 ~ showHandsOnArchitecture
-> Hands-On zum Aufbau
+> mehr über Aufbau
 < Wie so ein Chatbot funktioniert? Zunächst mal gibt es dich, den User.
 > *
 < Der User verbindet sich über Channels mit dem Bot.
@@ -52,7 +52,7 @@
 @ trigger('quit-handson')
 
 ~ showHandsOnSummary
-> Hands-On - ein Fazit
+> mehr über Fazit
 < Willst du meine persönliche Meinung zum Thema Chatbots wissen?
 > *
 < Hm. Also ich denke, auch Microsoft befindet sich erst am Anfang der Chatbot-Entwicklung. An vielen Stellen holpert es noch. Aber der Ansatz stimmt.
@@ -61,9 +61,19 @@
 > *
 < Ein Chatbot kann gut mit Bedacht eingesetzt werden. Wie wäre es zum Beispiel mit intelligenteren FAQs auf deiner Website?
 > *
-< Auch eine verbesserte Suche kann ich mir damit vorstellen.
+< Auch eine verbesserte Suche kann ich mir damit vorstellen. Bei DocMorris beispielsweise für Produkte und FAQ gleichermaßen.
 > *
-< In jedem Fall bekommt der Kunde so einen niederschwelligen Einstieg in das Thema vorgeführt. Ob daraus später mehr wird...?
+< Oder gib mal ein "günstiges Ölflex biegsam und abriebfest"
+> *
+< Hm. Ölflex mit diesen Merkmalen unter 50 Euro kenne ich 18. Wofür brauchst du es? - Und dann schlage ich dir Optionen vor, z.B. Datenübertragung, Energieversorgung usw.
+> *
+< Dafür empfehle ich das Ölflex 300 YPBL 20 für aktuell 27 Euro pro Meter. Es ist besonders biegsam. Wieviel brauchst du davon?
+> *
+< YPBL bezeichnet eine Gruppe extrem biegsamer Kabel für den rauhen Einsatz in Hochseegewässern.
+> *
+< Wen willst du denn damit erdrosseln? Ich habe es in deinen Warenkorb gelegt. Möchtest du noch Kabeldurchführungen dafür oder das optisch dazu passende Ölflex 31?
+> *
+< Na gut. In jedem Fall bekommt der Kunde so einen niederschwelligen Einstieg in das Thema vorgeführt. Ob daraus später mehr wird...?
 > *
 < Zudem ist der Einstieg auch relativ kostengünstig. In Azure kann ein Bot als Web App oder als Function angelegt werden. Du weißt, dass Functions keinen eigenen Server brauchen?
 > *
@@ -72,7 +82,7 @@
 @ trigger('quit-handson')
 
 ~ showHandsOnBestPractices
-> Hands-On mit Tipps
+> mehr über Tipps
 < Ach ja, das ist so eine Sache. Das häufigste Problem bei Bots ist die Mehrwertfindung.
 > *
 < Die Dialoge eines Bots lassen sich gut mit den Screens einer Website vergleichen.
@@ -98,7 +108,7 @@
 @ trigger('quit-handson')
 
 ~ showHandsOnLuis
-> Hands-On zu LUIS
+> mehr über LUIS
 < LUIS.. Das ist doch der Language Understanding Intelligent Service.
 > *
 < Damit kannst du Trigger für einen Bot erstellen.
@@ -108,7 +118,7 @@
 @ trigger('quit-handson')
 
 ~ showHandsOnQnAMaker
-> Hands-On zu QnA Maker
+> mehr über QnA Maker
 < Der QnA Maker hilft bei der Erstellung von FAQ.
 > *
 < Ohne Code lässt sich damit ein Dialog implementieren.
@@ -122,7 +132,7 @@
 @ trigger('quit-handson')
 
 ~ showHandsOnMoreThanWords
-> Hands-On zu Cards
+> mehr über Cards
 < Dialoge sind mehr als Worte.
 > *
 < Smileys, Audio, Video
@@ -136,7 +146,7 @@
 @ trigger('quit-handson')
 
 ~ showHandsOnCognitiveServices
-> Hands-On zu Cognitive Services
+> mehr über Cognitive Services
 < Also gut, etwas über Cognitive Services.
 > *
 < Es gibt eine Reihe von Services, die Microsoft anbietet und auch für Chatbots interessant sind. Hier findest du eine Übersicht https://azure.microsoft.com/en-us/services/cognitive-services/directory/
